@@ -1390,7 +1390,10 @@ CGFloat const JTSImageViewController_MinimumFlickDismissalVelocity = 800.0f;
 
 - (void)dismissingPanGestureRecognizerPanned:(UIPanGestureRecognizer *)panner {
     
-    if (self.scrollViewIsAnimatingAZoom || self.isAnimatingAPresentationOrDismissal) {
+    if (self.scrollViewIsAnimatingAZoom || self.isAnimatingAPresentationOrDismissal || self.dismissOnPanStart) {
+        if (self.dismissOnPanStart) {
+            [self dismiss:YES];
+        }
         return;
     }
     

@@ -77,6 +77,13 @@ extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;
 @property (assign, nonatomic, readwrite) CGFloat backgroundBlurRadius;
 
 /**
+ Dismisses when pan starts, instead of waiting to detect offset from origin. Performs the same action as touching outside the image when not zoomed.
+ 
+ Defaults to `NO`.
+ */
+@property (assign, nonatomic, readwrite) BOOL dismissOnPanStart;
+
+/**
  Designated initializer.
  
  @param imageInfo The source info for image and transition metadata. Required.
